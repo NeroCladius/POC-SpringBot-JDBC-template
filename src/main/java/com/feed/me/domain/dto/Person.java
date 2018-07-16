@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class DataFilter {
+public class Person {
 
     private Long id;
 

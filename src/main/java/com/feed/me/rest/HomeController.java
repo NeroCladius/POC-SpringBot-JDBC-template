@@ -1,7 +1,7 @@
 package com.feed.me.rest;
 
 import com.feed.me.domain.dto.DataFilter;
-import com.feed.me.domain.entity.PersonEntity;
+import com.feed.me.domain.dto.Person;
 import com.feed.me.service.HomeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,9 @@ public class HomeController {
         this.service = service;
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<List<PersonEntity>> getFields(DataFilter dataFilter) {
-
-        List<PersonEntity> field = service.getFilteredData(dataFilter);
-
+    @RequestMapping(value = "/field",method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<List<Person>> getFields(DataFilter dataFilter) {
+        List<Person> field = service.getFilteredData(dataFilter);
         return new ResponseEntity<>(field, HttpStatus.OK);
     }
 

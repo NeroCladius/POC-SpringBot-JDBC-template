@@ -1,26 +1,24 @@
 package com.feed.me.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
+@Entity
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "DATA")
 public class PersonEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name = "NAME")
+    private String name;
 
     @Column(name = "PERSON")
     private String person;
-
-    @Column(name = "NAME")
-    private String  name;
 }
